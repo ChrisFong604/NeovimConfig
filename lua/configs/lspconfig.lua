@@ -5,7 +5,7 @@ local on_init = configs.on_init
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls" }
+local servers = { "html", "cssls", }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -16,17 +16,20 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- typescript
+lspconfig.tailwindcss.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+} 
+
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
 }
 
--- haskell language server 
 lspconfig.hls.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
 }
-
