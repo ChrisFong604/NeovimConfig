@@ -8,7 +8,7 @@ M.plugins = {
 }
 
 M.ui = {
-	theme = "nightfox",
+	theme = "yoru",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
